@@ -1,0 +1,6 @@
+src/
+build.py
+generate_pdf.py
+icons/
+*.ttf
+*.pdf
