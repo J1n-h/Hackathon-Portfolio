@@ -19,9 +19,9 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#about" class="nav-link active" data-target="about">About</a></li>
-                    <li><a href="#projects" class="nav-link" data-target="projects">Projects</a></li>
-                    <li><a href="#stacks" class="nav-link" data-target="stacks">Stacks</a></li>
+                    <li><a href="#about" class="nav-link active" onclick="return showPage(this, 'about')">About</a></li>
+                    <li><a href="#projects" class="nav-link" onclick="return showPage(this, 'projects')">Projects</a></li>
+                    <li><a href="#stacks" class="nav-link" onclick="return showPage(this, 'stacks')">Stacks</a></li>
                 </ul>
             </nav>
         </header>
@@ -105,40 +105,35 @@
         </main>
     </div>
     <script>
-
-
-function initNavigation() {
+function showPage(el, targetId) {
     var navLinks = document.querySelectorAll('.nav-link');
     var pages = document.querySelectorAll('.page');
-
-    for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            
-            for (var j = 0; j < navLinks.length; j++) {
-                navLinks[j].classList.remove('active');
-            }
-            for (var k = 0; k < pages.length; k++) {
-                pages[k].classList.remove('active');
-            }
-            
-            
-            this.classList.add('active');
-            
-            
-            var targetId = this.getAttribute('data-target');
-            document.getElementById(targetId).classList.add('active');
-            
-            
-            window.scrollTo(0, 0);
-        });
+    
+    
+    for (var j = 0; j < navLinks.length; j++) {
+        navLinks[j].classList.remove('active');
     }
+    for (var k = 0; k < pages.length; k++) {
+        pages[k].classList.remove('active');
+    }
+    
+    
+    if (el) {
+        el.classList.add('active');
+    }
+    
+    
+    var targetElement = document.getElementById(targetId);
+    if (targetElement) {
+        targetElement.classList.add('active');
+    }
+    
+    
+    window.scrollTo(0, 0);
+    
+    
+    return false;
 }
-
-
-initNavigation();
-
 
 </script>
 </body>
