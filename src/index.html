@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이진헌 포트폴리오</title>
+    <!-- Security Headers -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Use Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header / Navigation -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="nav-link active" onclick="return showPage(this, 'about')">About</a></li>
+                    <li><a href="#projects" class="nav-link" onclick="return showPage(this, 'projects')">Projects</a></li>
+                    <li><a href="#stacks" class="nav-link" onclick="return showPage(this, 'stacks')">Stacks</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="page active">
+                <div class="card about-card">
+                    <p class="greeting">안녕하세요<br>선린인터넷 고등학교 소속 이진헌입니다</p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="page">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/1f42rbSqGUw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-info">
+                            <h3>Minecraft 로그인 자동화 매크로</h3>
+                            <p>Python과 Selenium을 활용하여 로그인 과정을 자동화하고, 희귀 닉네임을 사용하기 위해 닉네임 변경을 반복하는 매크로 프로그램입니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/tSu61Uw2l4o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-info">
+                            <h3>콘텐츠 허브</h3>
+                            <p>Python, PySide6, SQLite을 활용한 유튜브, 네이버 웹툰, 카카오페이지에서 구독 중인 채널·작품의 최신 업로드를 한 곳에서 확인할 수 있는 데스크톱 알림 오버레이입니다. 유튜브는 구글 계정 연동, 네이버 웹툰과 카카오페이지는 링크만 등록하면 새 업로드가 생길 때마다 자동으로 알려줍니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="card project-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/4ENZtwrMXXI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <div class="project-info">
+                            <h3>진법 변환기</h3>
+                            <p>가장 자주 사용되는 2, 8, 10, 16진수를 손쉽게 상호 변환할 수 있는 심플한 웹 기반 진법 변환기입니다. 숫자를 입력하는 즉시 결괏값이 실시간으로 표시됩니다.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="card project-card">
+                        <div class="project-info" style="padding: 2rem;">
+                            <h3>Sumi</h3>
+                            <p>discord.js를 활용한 디스코드 통화방의 음성 대화를 실시간으로 녹음하여 텍스트로 변환하고 핵심 내용을 요약해 주는 디스코드 봇입니다. 사용자가 음성 채널에 봇을 부르면 참가자들의 목소리를 안정적으로 분리 기록하며, 통화가 끝난 직후 OpenAI의 Whisper 및 GPT 모델을 활용해 회의록 수준의 깔끔한 요약본을 지정된 채널로 전송합니다.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Stacks Section -->
+            <section id="stacks" class="page">
+                <h2 class="section-title">Tech Stacks</h2>
+                <div class="card stacks-container">
+                    <div class="stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+                        <span>HTML</span>
+                    </div>
+                    <div class="stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+                        <span>CSS</span>
+                    </div>
+                    <div class="stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+                        <span>C</span>
+                    </div>
+                    <div class="stack-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                        <span>Python</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
