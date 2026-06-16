@@ -100,6 +100,18 @@ def create_pdf():
             "desc": "Python, PySide6, SQLite을 활용한 유튜브, 네이버 웹툰, 카카오페이지에서 구독 중인 채널·작품의 최신 업로드를 한 곳에서 확인할 수 있는 데스크톱 알림 오버레이입니다. 유튜브는 구글 계정 연동, 네이버 웹툰과 카카오페이지는 링크만 등록하면 새 업로드가 생길 때마다 자동으로 알려줍니다.",
             "video": "https://youtu.be/tSu61Uw2l4o",
             "site": None
+        },
+        {
+            "title": "진법 변환기",
+            "desc": "가장 자주 사용되는 2, 8, 10, 16진수를 손쉽게 상호 변환할 수 있는 심플한 웹 기반 진법 변환기입니다. 숫자를 입력하는 즉시 결괏값이 실시간으로 표시됩니다.",
+            "video": "https://youtu.be/4ENZtwrMXXI",
+            "site": None
+        },
+        {
+            "title": "Sumi",
+            "desc": "discord.js를 활용한 디스코드 통화방의 음성 대화를 실시간으로 녹음하여 텍스트로 변환하고 핵심 내용을 요약해 주는 디스코드 봇입니다. 통화가 끝난 직후 OpenAI의 Whisper 및 GPT 모델을 활용해 회의록 수준의 깔끔한 요약본을 전송합니다.",
+            "video": "",
+            "site": None
         }
     ]
 
@@ -143,10 +155,14 @@ def create_pdf():
         pdf.set_font("helvetica", size=8)
         pdf.set_text_color(0, 102, 204) # Blue color for links
         pdf.set_xy(cx + 10, link_y)
-        pdf.cell(card_w - 20, 6, proj["video"], link=proj["video"], new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+        if proj.get("video"):
+            pdf.cell(card_w - 20, 6, proj["video"], link=proj["video"], new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
         if proj.get("site"):
-            pdf.set_xy(cx + 10, link_y + 6)
+            if not proj.get("video"):
+                pdf.set_xy(cx + 10, link_y)
+            else:
+                pdf.set_xy(cx + 10, link_y + 6)
             pdf.cell(card_w - 20, 6, proj["site"], link=proj["site"], new_x=XPos.LMARGIN, new_y=YPos.NEXT)
 
         # Tag (if exists) rendered at the bottom right
